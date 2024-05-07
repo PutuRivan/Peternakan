@@ -1,9 +1,13 @@
 import React from 'react'
+import { Navigation } from './Navigation';
 
 const DashboardComponent = () => {
     return (
         <>
-            <h1>Dashboard</h1>
+            <Navigation/>
+            <div>
+                
+            </div>
         </>
     )
 }
