@@ -1,14 +1,15 @@
 import React from 'react'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
-const LoginComponent = () => {
+const LoginPage = () => {
     const Navigate = useNavigate()
 
     const goToDashboard = () =>{
         Navigate("/Dashboard")
     }
+    
     return (
-    <div className="bg-[url('/login-bg.jpg')] bg-cover bg-center h-screen">
+        <div className="bg-[url('/login-bg.jpg')] bg-cover bg-center h-screen">
         <div className='flex justify-center items-center h-screen'>
             <div className='w-[400px] h-[500px] rounded-2xl bg-[#dbdbdbfd]'>
                 <div className='flex justify-center flex-col items-center'>
@@ -33,7 +34,7 @@ const LoginComponent = () => {
             </div>
         </div>
     </div>
-)
+    )
 }
 
-export default LoginComponent;
+export default LoginPage;
