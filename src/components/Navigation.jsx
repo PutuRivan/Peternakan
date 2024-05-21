@@ -8,7 +8,7 @@ export const Navigation = () => {
       to={'/Dashboard'} 
       className='text-[1.4rem]'>
         <img 
-        src="/Logo.jpg" 
+        src="/bg.jpg" 
         alt="" 
         className='rounded-full w-[3.2rem] h-[3.2rem]'
         />

@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 
 const AnimalList = () => {
     return (
-        <div className='grid grid-cols-3 gap-3 m-3'>
-            <Link
+        <div className='grid grid-cols-3 gap-3 bg-[url("/bg.jpg")] h-[90vh] bg-no-repeat bg-cover'>
+            {/* <Link
             to={'/Chicken'}
-            className='shadow-2xl p-5 flex flex-col justify-center items-center'>
+            className='p-5 flex flex-col justify-center items-center'>
                 <img 
                 src="/chicken.webp" 
                 alt="" />
@@ -14,7 +14,7 @@ const AnimalList = () => {
 
             
             <Link to={'/Cow'}
-            className='shadow-2xl p-5 flex flex-col justify-center items-center'>
+            className='p-5 flex flex-col justify-center items-center'>
                 <img 
                 src="/Cow.jpg" 
                 alt="" 
@@ -22,11 +22,11 @@ const AnimalList = () => {
             </Link>
 
             <Link to={'/Kambing'} 
-            className='shadow-2xl p-5 flex flex-col justify-center items-center'>
+            className='p-5 flex flex-col justify-center items-center'>
                 <img 
                 src="/kambing.jpg" 
                 alt="" />
-            </Link>
+            </Link> */}
         </div>
     )
 }
