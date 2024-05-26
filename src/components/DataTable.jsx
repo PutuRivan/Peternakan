@@ -18,7 +18,7 @@ const animals = {
   ]
 };
 
-const AnimalCards = () => {
+const DataTable = () => {
   const [selectedAnimal, setSelectedAnimal] = useState('');
 
   const handleAnimalChange = (event) => {
@@ -26,7 +26,7 @@ const AnimalCards = () => {
   };
 
   return (
-    <div className="container mx-auto my-8">
+    <div className="flex flex-col justify-center items-center">
       <div className="flex justify-between items-center mb-4 mx-4">
         <div>
           <select
@@ -55,10 +55,10 @@ const AnimalCards = () => {
           ))}
         </div>
       ) : (
-        <div className="text-center">Silakan pilih hewan terlebih dahulu.</div>
+        <div className="text-center font-bold text-2xl">Silakan pilih hewan terlebih dahulu.</div>
       )}
     </div>
   );
 };
 
-export default AnimalCards;
+export default DataTable;

@@ -3,7 +3,7 @@ import { Navigation } from '../../components/Navigation'
 import { Link } from 'react-router-dom';
 import { ArrowCircleLeft } from '@phosphor-icons/react';
 
-const KesehatanBabi = () => {
+const KesehatanSapi = () => {
   const [rows, setRows] = useState([
     {
       id: 1,
@@ -50,12 +50,12 @@ const KesehatanBabi = () => {
    <div className='bg-[url("/bg.jpg")] h-[90vh] bg-no-repeat bg-top bg-cover'>
    <div className="flex flex-row items-center justify-center h-[90vh]">
       <div className="">
-        <Link to="/Babi">
+        <Link to="/Sapi">
           <ArrowCircleLeft size={80} className="text-[red]" />
         </Link>
       </div>
       <div className="w-3/4 md:w-2/3 lg:w-1/2 bg-white shadow-lg rounded-lg p-6">
-        <h1 className="text-center text-2xl py-3">KESEHATAN BABI</h1>
+        <h1 className="text-center text-2xl py-3">KESEHATAN SAPI</h1>
         <table className="table-auto w-full">
           <thead>
             <tr>
@@ -98,4 +98,4 @@ const KesehatanBabi = () => {
   )
 }
 
-export default KesehatanBabi
+export default KesehatanSapi

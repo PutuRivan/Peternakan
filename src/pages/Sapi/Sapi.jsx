@@ -35,14 +35,14 @@ const Sapi = () => {
                 <h1 className="font-bold text-[2rem]">UBAH DATA</h1>
               </Link>
 
-              <div className="bg-white w-[300px] h-[300px] rounded-xl flex flex-col items-center justify-center">
+              <Link to="/Kesehatan-Sapi" className="bg-white w-[300px] h-[300px] rounded-xl flex flex-col items-center justify-center">
                 <img
                   className="h-[250px] w-[250px]"
                   src="/kesehatan.png"
                   alt=""
                 />
                 <h1 className="font-bold text-[2rem]">KESEHATAN</h1>
-              </div>
+              </Link>
             </div>
           </div>
         </div>

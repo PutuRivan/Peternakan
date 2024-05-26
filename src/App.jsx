@@ -14,6 +14,8 @@ import UpdateDataBabi from "./pages/Babi/UpdateDataBabi";
 import KesehatanBabi from "./pages/Babi/KesehatanBabi";
 import UpdateDataKambing from "./pages/Kambing/UpdateDataKambing";
 import UpdateDataSapi from "./pages/Sapi/UpdateDataSapi";
+import KesehatanSapi from "./pages/Sapi/KesehatanSapi";
+import KesehatanKambing from "./pages/Kambing/KesehatanKambing";
 
 function App() {
   return (
@@ -33,10 +35,12 @@ function App() {
         <Route path="/Sapi" element={<Sapi />} />
         <Route path="/Add-data-Sapi" element={<AddDataSapi />} />
         <Route path="/Update-Data-Sapi" element={<UpdateDataSapi />} />
+        <Route path="/Kesehatan-Sapi" element={<KesehatanSapi />} />
         
         <Route path="/Kambing" element={<Kambing />} />
         <Route path="/Add-data-kambing" element={<AddDataKambing />} />
         <Route path="/Update-Data-kambing" element={<UpdateDataKambing />} />
+        <Route path="/Kesehatan-Kambing" element={<KesehatanKambing />} />
       </Routes>
     </BrowserRouter>
   );

@@ -10,7 +10,7 @@ const UpdateDataSapi = () => {
     <div className='bg-[url("/bg.jpg")] h-[90vh] bg-no-repeat bg-center bg-cover flex items-center justify-center '>
         <div className="flex gap-5">
           <div className="">
-            <Link to="/Babi">
+            <Link to="/Sapi">
               <ArrowCircleLeft size={80} className="text-[red]" />
             </Link>
           </div>

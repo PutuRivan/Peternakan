@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
-import { Navigation } from '../../components/Navigation'
-import { Link } from 'react-router-dom';
-import { ArrowCircleLeft } from '@phosphor-icons/react';
+import { ArrowCircleLeft } from "@phosphor-icons/react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-const KesehatanBabi = () => {
+const KesehatanTable = () => {
   const [rows, setRows] = useState([
     {
       id: 1,
@@ -45,10 +44,7 @@ const KesehatanBabi = () => {
   };
 
   return (
-   <>
-   <Navigation/>
-   <div className='bg-[url("/bg.jpg")] h-[90vh] bg-no-repeat bg-top bg-cover'>
-   <div className="flex flex-row items-center justify-center h-[90vh]">
+    <div className="flex flex-row items-center justify-center h-[90vh]">
       <div className="">
         <Link to="/Babi">
           <ArrowCircleLeft size={80} className="text-[red]" />
@@ -93,9 +89,7 @@ const KesehatanBabi = () => {
         </button>
       </div>
     </div>
-   </div>
-   </>
-  )
-}
+  );
+};
 
-export default KesehatanBabi
+export default KesehatanTable;

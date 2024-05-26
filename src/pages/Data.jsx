@@ -2,7 +2,6 @@ import React from 'react'
 import { Navigation } from '../components/Navigation'
 import DataTable from '../components/DataTable'
 
-
 const Data = () => {
     return (
         <>
