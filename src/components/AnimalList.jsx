@@ -3,30 +3,41 @@ import { Link } from 'react-router-dom'
 
 const AnimalList = () => {
     return (
-        <div className='grid grid-cols-3 gap-3 bg-[url("/bg.jpg")] h-[90vh] bg-no-repeat bg-cover'>
-            {/* <Link
-            to={'/Chicken'}
-            className='p-5 flex flex-col justify-center items-center'>
+        <div className='bg-[url("/bg.jpg")] h-[90vh] bg-no-repeat bg-center bg-cover flex justify-center items-center'>
+            <div className='grid grid-cols-3 gap-5'>
+                <Link 
+                to="/Babi"
+                className='bg-yellow-400 p-5 rounded-xl '
+                >
                 <img 
-                src="/chicken.webp" 
-                alt="" />
-            </Link>
+                src="/babi.jpg" 
+                alt="" 
+                className='rounded-xl w-[300px] h-[300px]'
+                />
+                </Link>
 
-            
-            <Link to={'/Cow'}
-            className='p-5 flex flex-col justify-center items-center'>
+                <Link
+                to="/Sapi"
+                className='bg-yellow-400 p-5 rounded-xl '
+                >
                 <img 
                 src="/Cow.jpg" 
                 alt="" 
+                className='rounded-xl w-[300px] h-[300px]'
                 />
-            </Link>
+                </Link>
 
-            <Link to={'/Kambing'} 
-            className='p-5 flex flex-col justify-center items-center'>
+                <Link
+                to="/Kambing"
+                className='bg-yellow-400 p-5 rounded-xl '
+                >
                 <img 
                 src="/kambing.jpg" 
-                alt="" />
-            </Link> */}
+                alt="" 
+                className='rounded-xl w-[300px] h-[300px]'
+                />
+                </Link>
+            </div>
         </div>
     )
 }

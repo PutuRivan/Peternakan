@@ -15,8 +15,8 @@ export const Navigation = () => {
       </Link>
       <div className='flex gap-3 text-[1.2rem]'>
         <a href="/Hewan" className='hover:text-[red]'>Hewan</a>
-        <a href="/info" className='hover:text-[red]'>Info</a>
-        <a href="/Status" className='hover:text-[red]'>Status</a>
+        <a href="/Data" className='hover:text-[red]'>Data</a>
+        <a href="/Kebutuhan" className='hover:text-[red]'>Kebutuhan</a>
       </div>
       <div>
         <img 
