@@ -1,15 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { Navigation } from "../../components/Navigation";
-import { ArrowCircleLeft } from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
+import { ArrowCircleLeft } from "@phosphor-icons/react";
+import TableDataSapi from "./TableDataSapi";
+import TableKesehatanSapi from "./TableKesehatanSapi";
 
 const Sapi = () => {
+  const [selectedOption, setSelectedOption] = useState("");
+
+  const handleOptionChange = (option) => {
+    setSelectedOption(option);
+  };
+
   return (
     <>
       <Navigation />
-      <div className='bg-[url("/bg.jpg")] h-[90vh] bg-no-repeat bg-center bg-cover flex'>
-        <div className="flex flex-col my-9 w-full gap-5 mx-9">
-          <div className="flex flex-row">
+      <div className='bg-[url("/bg.jpg")] h-[90vh] bg-no-repeat bg-center bg-cover'>
+        <div className="flex w-full gap-5 h-[90vh]">
+          <div className="w-[350px] flex py-14">
             <Link to="/Hewan">
               <ArrowCircleLeft size={80} className="text-[red]" />
             </Link>
@@ -19,30 +27,22 @@ const Sapi = () => {
               className="rounded-xl w-[200px] h-[200px] mx-3"
             />
           </div>
-          <div className="flex justify-center">
-            <div className="grid grid-cols-3 gap-52">
-              <Link 
-              to="/Add-Data-Sapi"
-              className="bg-white w-[300px] h-[300px] rounded-xl flex flex-col items-center justify-center">
-                <img className="h-[250px] w-[250px]" src="/plus.png" alt="" />
-                <h1 className="font-bold text-[2rem]">TAMBAH DATA</h1>
-              </Link>
+          <div className="w-[1300px] flex flex-col gap-3 py-10 px-5">
+            <div className="">
+              <select
+                onChange={(e) => handleOptionChange(e.target.value)}
+                className="px-4 py-2 bg-gray-200 rounded-md"
+                value={selectedOption} 
+              >
+                <option value="">Pilih</option>
+                <option value="TableBabi">Data Table Sapi</option>
+                <option value="Kesehatan">Data Table Kesehatan Sapi</option>
+              </select>
+            </div>
 
-              <Link 
-              to="/Update-Data-Sapi"
-              className="bg-white w-[300px] h-[300px] rounded-xl flex flex-col items-center justify-center">
-                <img className="h-[250px] w-[250px]" src="/update.png" alt="" />
-                <h1 className="font-bold text-[2rem]">UBAH DATA</h1>
-              </Link>
-
-              <Link to="/Kesehatan-Sapi" className="bg-white w-[300px] h-[300px] rounded-xl flex flex-col items-center justify-center">
-                <img
-                  className="h-[250px] w-[250px]"
-                  src="/kesehatan.png"
-                  alt=""
-                />
-                <h1 className="font-bold text-[2rem]">KESEHATAN</h1>
-              </Link>
+            <div className="flex w-full">
+              {selectedOption === "TableBabi" && <TableDataSapi />}
+              {selectedOption === "Kesehatan" && <TableKesehatanSapi />}
             </div>
           </div>
         </div>
