@@ -1,29 +1,31 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from "react";
+import axios from 'axios'
 
-const animals = {
-  goat: [
-    { name: 'Kambing 1', weight: '50 kg', age: '2 tahun' },
-    { name: 'Kambing 2', weight: '45 kg', age: '1 tahun' },
-    { name: 'Kambing 3', weight: '55 kg', age: '3 tahun' }
-  ],
-  pig: [
-    { name: 'Babi 1', weight: '80 kg', age: '2 tahun' },
-    { name: 'Babi 2', weight: '75 kg', age: '1 tahun' },
-    { name: 'Babi 3', weight: '90 kg', age: '3 tahun' }
-  ],
-  cow: [
-    { name: 'Sapi 1', weight: '300 kg', age: '4 tahun' },
-    { name: 'Sapi 2', weight: '250 kg', age: '3 tahun' },
-    { name: 'Sapi 3', weight: '350 kg', age: '5 tahun' }
-  ]
-};
 
 const DataTable = () => {
-  const [selectedAnimal, setSelectedAnimal] = useState('');
+  const [kambingData, setKambingData] = useState([]);
+  const [babiData, setBabiData] = useState([]);
+  const [sapiData, setSapiData] = useState([]);
+  const [selectedOption, setSelectedOption] = useState("");
 
-  const handleAnimalChange = (event) => {
-    setSelectedAnimal(event.target.value);
-  };
+  useEffect(() => {
+    const fetchData = async () => {
+      const kambingResponse = await axios.get(
+        "http://localhost:8000/API/v1/Moomeadows/Kambing"
+      );
+      const babiResponse = await axios.get(
+        "http://localhost:8000/API/v1/Moomeadows/Babi"
+      );
+
+      const sapiResponse = await axios.get(
+        "http://localhost:8000/API/v1/Moomeadows/Sapi"
+      );
+      setKambingData(kambingResponse.data);
+      setBabiData(babiResponse.data);
+      setSapiData(sapiResponse.data);
+    };
+    fetchData();
+  }, []);
 
   return (
     <div className="flex flex-col justify-center items-center">
@@ -31,32 +33,54 @@ const DataTable = () => {
         <div>
           <select
             className="px-4 py-2 bg-gray-200 rounded-md"
-            value={selectedAnimal}
-            onChange={handleAnimalChange}
+            value={selectedOption}
+            onChange={(e) => setSelectedOption(e.target.value)}
           >
             <option value="">Pilih Hewan</option>
-            <option value="goat">Kambing</option>
-            <option value="pig">Babi</option>
-            <option value="cow">Sapi</option>
+            <option value="kambing">Kambing</option>
+            <option value="babi">Babi</option>
+            <option value="sapi">Sapi</option>
           </select>
         </div>
       </div>
-      {selectedAnimal ? (
-        <div className="grid grid-cols-2 gap-4 mx-4">
-          {animals[selectedAnimal].map((item, index) => (
-            <div
-              key={index}
-              className="bg-gray-200 p-4 rounded-md"
-            >
-              <h3 className="text-lg font-bold">{item.name}</h3>
-              <p>Berat: {item.weight}</p>
-              <p>Umur: {item.age}</p>
+      
+      {selectedOption === "kambing" && (
+        <div className="grid grid-cols-5 gap-4 mx-4">
+          {kambingData.map((kambing, index) => (
+            <div key={index} className="bg-gray-200 p-4 rounded-md">
+              <h3 className="text-lg font-bold">Kambing {index + 1}</h3>
+              <p>Berat: {kambing.berat} kg</p>
+              <p>Umur: {kambing.umur} tahun</p>
             </div>
           ))}
         </div>
-      ) : (
-        <div className="text-center font-bold text-2xl">Silakan pilih hewan terlebih dahulu.</div>
       )}
+
+      {selectedOption === "sapi" && (
+        <div className="grid grid-cols-5 gap-4 mx-4">
+          {sapiData.map((sapi, index) => (
+            <div key={index} className="bg-gray-200 p-4 rounded-md">
+              <h3 className="text-lg font-bold">Sapi {index + 1}</h3>
+              <p>Berat: {sapi.berat} kg</p>
+              <p>Umur: {sapi.umur} tahun</p>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {selectedOption === "babi" && (
+        <div className="grid grid-cols-5 gap-4 mx-4">
+          {babiData.map((babi, index) => (
+            <div key={index} className="bg-gray-200 p-4 rounded-md">
+              <h3 className="text-lg font-bold">Babi {index + 1}</h3>
+              <p>Berat: {babi.berat} kg</p>
+              <p>Umur: {babi.umur} tahun</p>
+            </div>
+          ))}
+        </div>
+      )}
+
+
     </div>
   );
 };

@@ -52,34 +52,3 @@ const Babi = () => {
 };
 
 export default Babi;
-
-{
-  /* <div className="">
-  <Link to="/Hewan">
-    <ArrowCircleLeft size={80} className="text-[red]" />
-  </Link>
-  <img
-    src="/babi.jpg"
-    alt=""
-    className="rounded-xl w-[200px] h-[200px] mx-3"
-  />
-</div>
-<div className="">
-  <div className="">
-    <select
-      onChange={(e) => handleOptionChange(e.target.value)}
-      className="px-4 py-2 bg-gray-200 rounded-md"
-      value={selectedOption}
-    >
-      <option value="">Pilih</option>
-      <option value="TableBabi">Data Table Babi</option>
-      <option value="Kesehatan">Data Table Kesehatan Babi</option>
-    </select>
-  </div>
-
-  <div className="">
-    {selectedOption === "TableBabi" && <TableDataBabi />}
-    {selectedOption === "Kesehatan" && <TableKesehatan />}
-  </div>
-</div> */
-}

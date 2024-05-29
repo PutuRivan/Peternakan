@@ -19,6 +19,7 @@ function App() {
         <Route path="/Kebutuhan" element={<Kebutuhan />} />
 
         <Route path="/Babi" element={<Babi />} />
+        <Route path="/Babi?" element={<Babi />} />
 
         <Route path="/Sapi" element={<Sapi />} />
 

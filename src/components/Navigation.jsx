@@ -19,11 +19,7 @@ export const Navigation = () => {
         <a href="/Kebutuhan" className='hover:text-[red]'>Kebutuhan</a>
       </div>
       <div>
-        <img 
-        src="/people.png" 
-        alt="profile" 
-        className='rounded-full w-12 h-12'
-        />
+       
       </div>
     </nav>
   )
